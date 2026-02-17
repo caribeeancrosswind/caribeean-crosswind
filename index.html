@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Caribbean Crosswind Virtual</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <div class="center">
-    <h1>Caribbean Crosswind Virtual</h1>
-    <p>Bienvenido a la nueva generación de VA</p>
-    <a href="login.html" class="btn">Login</a>
-    <a href="register.html" class="btn">Register</a>
-  </div>
-</body>
-</html>
+
+const SUPABASE_URL = "PON_AQUI_TU_SUPABASE_URL";
+const SUPABASE_ANON_KEY = "PON_AQUI_TU_PUBLISHABLE_KEY";
+
+const supabaseClient = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);

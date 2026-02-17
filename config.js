@@ -1,11 +1,22 @@
-// IMPORTANTE:
-// Reemplaza estos valores con los tuyos reales de Supabase
-// Ve a Supabase → Settings → API
 
-const SUPABASE_URL = "https://tvzgbzmgoklweddcxqbb.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_4KUtTNvezxKzgILwkHwYew_LJrKh93n";
+body {
+  background-color: #000;
+}
 
-const supabaseClient = supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_ANON_KEY
-);
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('https://images.unsplash.com/photo-1504198458649-3128b932f49b?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+}
+
+.navbar {
+  backdrop-filter: blur(6px);
+}
+
+.card {
+  border-radius: 10px;
+}
+
+footer {
+  font-size: 14px;
+}

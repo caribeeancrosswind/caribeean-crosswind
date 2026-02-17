@@ -1,21 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Register</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caribbean Crosswind | Virtual Airline</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="card">
-    <h2>Register</h2>
-    <input type="text" id="name" placeholder="Full Name">
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
-    <input type="text" id="simbrief" placeholder="SimBrief Username">
-    <button onclick="register()">Create Account</button>
-  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/config.js"></script>
-<script src="js/auth.js"></script>
+<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Caribbean Crosswind</a>
+    <div>
+      <a href="login.html" class="btn btn-outline-light me-2">Pilot Login</a>
+      <a href="register.html" class="btn btn-primary">Join the Fleet</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero d-flex align-items-center justify-content-center text-center text-white">
+  <div>
+    <h1 class="display-4 fw-bold">Caribbean Crosswind</h1>
+    <p class="lead">Global Virtual Airline Experience</p>
+    <a href="register.html" class="btn btn-primary btn-lg mt-3">Start Flying Today</a>
+  </div>
+</header>
+
+<section class="container py-5 text-white">
+  <div class="row text-center">
+    <div class="col-md-3">
+      <h3>Global Routes</h3>
+      <p>Fly across Latin America and worldwide destinations.</p>
+    </div>
+    <div class="col-md-3">
+      <h3>Modern Fleet</h3>
+      <p>A320, B738, A321 and more.</p>
+    </div>
+    <div class="col-md-3">
+      <h3>Professional System</h3>
+      <p>SimBrief Integrated & Real-time tracking.</p>
+    </div>
+    <div class="col-md-3">
+      <h3>Community</h3>
+      <p>Join a serious and active pilot network.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-black text-center text-white py-3">
+  Caribbean Crosswind Virtual Airline © 2025
+</footer>
+
 </body>
 </html>
