@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title>Login</title>
+<meta charset="UTF-8">
+<title>Acceso Piloto</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-dark text-white d-flex align-items-center justify-content-center vh-100">
 
-<div class="card p-4 bg-black text-white" style="width:400px;">
-<h3 class="text-center mb-3">Pilot Login</h3>
-<input type="email" id="email" class="form-control mb-3" placeholder="Email">
-<input type="password" id="password" class="form-control mb-3" placeholder="Password">
-<button class="btn btn-primary w-100" onclick="login()">Login</button>
+<div class="card p-4 shadow" style="width:400px;">
+<h3 class="text-center mb-3">Acceso Piloto</h3>
+<input type="email" id="email" class="form-control mb-3" placeholder="Correo">
+<input type="password" id="password" class="form-control mb-3" placeholder="Contraseña">
+<button class="btn btn-primary w-100" onclick="login()">Ingresar</button>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>

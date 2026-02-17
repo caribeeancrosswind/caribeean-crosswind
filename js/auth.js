@@ -12,7 +12,7 @@ await supabaseClient.from("pilots").insert([
 { id: data.user.id, name, simbrief_username: simbrief }
 ]);
 
-alert("Account created. Check your email.");
+alert("Revisa tu correo para confirmar.");
 window.location.href = "login.html";
 }
 
@@ -23,5 +23,5 @@ const password = document.getElementById("password").value;
 const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
 if (error) return alert(error.message);
 
-window.location.href = "dashboard.html";
+window.location.href = "index.html";
 }

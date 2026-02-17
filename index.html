@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,27 +10,79 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
 <div class="container">
 <a class="navbar-brand fw-bold" href="#">Caribbean Crosswind</a>
-<div>
-<a href="login.html" class="btn btn-outline-light me-2">Pilot Login</a>
-<a href="register.html" class="btn btn-primary">Join the Fleet</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+<li class="nav-item"><a class="nav-link" href="#flota">Flota</a></li>
+<li class="nav-item"><a class="nav-link" href="#rutas">Rutas</a></li>
+<li class="nav-item"><a class="nav-link" href="login.html">Acceso Piloto</a></li>
+<li class="nav-item"><a class="btn btn-primary ms-2" href="register.html">Únete</a></li>
+</ul>
 </div>
 </div>
 </nav>
 
-<header class="hero d-flex align-items-center justify-content-center text-center text-white">
-<div>
-<h1 class="display-4 fw-bold">Caribbean Crosswind</h1>
-<p class="lead">Global Virtual Airline Experience</p>
-<a href="register.html" class="btn btn-primary btn-lg mt-3">Start Flying Today</a>
+<header class="hero text-white text-center d-flex align-items-center">
+<div class="container">
+<h1 class="display-3 fw-bold">Caribbean Crosswind</h1>
+<p class="lead">Virtual Airline Profesional Global</p>
+<a href="register.html" class="btn btn-primary btn-lg mt-3">Comenzar a Volar</a>
 </div>
 </header>
 
-<footer class="bg-black text-center text-white py-3">
+<section class="container py-5 text-center">
+<h2 class="mb-4">Nuestra Flota</h2>
+<div class="row" id="flota">
+<div class="col-md-4">
+<div class="card shadow">
+<img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Airbus A320</h5>
+<p>Operaciones regionales y continentales.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card shadow">
+<img src="https://images.unsplash.com/photo-1504198266285-1659872e6590" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Boeing 737-800</h5>
+<p>Alta eficiencia y alcance medio.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card shadow">
+<img src="https://images.unsplash.com/photo-1503437313881-503a91226402" class="card-img-top">
+<div class="card-body">
+<h5 class="card-title">Airbus A321</h5>
+<p>Rutas internacionales extendidas.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="bg-dark text-white py-5" id="rutas">
+<div class="container text-center">
+<h2 class="mb-4">Red Global de Rutas</h2>
+<p>Operamos en Latinoamérica, Norteamérica y Europa.</p>
+<img src="https://images.unsplash.com/photo-1465447142348-e9952c393450" class="img-fluid rounded shadow">
+</div>
+</section>
+
+<footer class="bg-black text-white text-center py-4">
 Caribbean Crosswind Virtual Airline © 2025
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
