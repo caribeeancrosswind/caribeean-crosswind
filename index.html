@@ -4,120 +4,33 @@
   <meta charset="UTF-8">
   <title>Caribbean Crosswind Virtual</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 50px;
-    }
-
-    .card {
-      background-color: #1e293b;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 500px;
-      margin: auto;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-    }
-
-    button {
-      background-color: #2563eb;
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 15px;
-    }
-
-    button:hover {
-      background-color: #1d4ed8;
-    }
-
-    h1 {
-      margin-bottom: 10px;
-    }
-
-    .route {
-      font-size: 18px;
-      margin: 10px 0;
-      color: #93c5fd;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script>
-const supabase = supabase.createClient(
-  "TU_SUPABASE_URL",
-  "TU_SUPABASE_ANON_KEY"
-);
-
-async function registerPilot() {
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const simbrief_username = document.getElementById("simbrief_username").value;
-  const simbrief_userid = document.getElementById("simbrief_userid").value;
-
-  await supabase.from("pilots").insert([
-    { name, email, simbrief_username, simbrief_userid }
-  ]);
-
-  alert("Piloto registrado correctamente");
-}
-</script>
-
 <body>
 
-  <div class="card">
+  <div class="container">
     <h1>Caribbean Crosswind Virtual</h1>
-    <div class="route">Vuelo CCW101</div>
-    <div class="route">SCEL → SABE</div>
-    <div class="route">Aircraft: A320</div>
+
     <h2>Registro Piloto</h2>
 
-<input type="text" id="name" placeholder="Nombre">
-<input type="email" id="email" placeholder="Email">
-<input type="text" id="simbrief_username" placeholder="SimBrief Username">
-<input type="text" id="simbrief_userid" placeholder="SimBrief UserID">
+    <input type="text" id="name" placeholder="Nombre completo">
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="simbrief_username" placeholder="SimBrief Username">
 
-<button onclick="registerPilot()">Registrarse</button>
+    <button onclick="registerPilot()">Registrar Piloto</button>
 
+    <hr>
 
-    <form action="https://www.simbrief.com/system/dispatch.php" method="POST" target="_blank">
-      <input type="hidden" name="orig" value="SCEL">
-      <input type="hidden" name="dest" value="SABE">
-      <input type="hidden" name="type" value="A320">
-      <input type="hidden" name="airline" value="CCW">
-      <input type="hidden" name="fltnum" value="101">
-      <button onclick="generateFlight()">Generar Plan en SimBrief</button>
-<script>
-async function generateFlight() {
-  const email = document.getElementById("email").value;
+    <h2>Generar Vuelo</h2>
 
-  const { data } = await supabase
-    .from("pilots")
-    .select("*")
-    .eq("email", email)
-    .single();
-
-  if (!data) {
-    alert("Piloto no encontrado");
-    return;
-  }
-
-  const url = `https://www.simbrief.com/system/dispatch.php?orig=SCEL&dest=SABE&type=A320&airline=CCW&fltnum=101&username=${data.simbrief_username}`;
-
-  window.open(url, "_blank");
-}
-</script>
-
-    </form>
+    <input type="email" id="login_email" placeholder="Email registrado">
+    <button onclick="generateFlight()">Generar Plan en SimBrief</button>
 
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
 
 </body>
 </html>
