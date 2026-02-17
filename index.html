@@ -1,13 +1,71 @@
-<h1>Caribbean Crosswind Virtual</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Caribbean Crosswind Virtual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
 
-<h2>Vuelo CCW101 SCEL → SABE</h2>
+    .card {
+      background-color: #1e293b;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
 
-<form action="https://www.simbrief.com/system/dispatch.php" method="POST" target="_blank">
-  <input type="hidden" name="orig" value="SCEL">
-  <input type="hidden" name="dest" value="SABE">
-  <input type="hidden" name="type" value="A320">
-  <input type="hidden" name="airline" value="CCW">
-  <input type="hidden" name="fltnum" value="101">
-  <input type="hidden" name="username" value="dominikr11">
-  <button type="submit">Generate Flight in SimBrief</button>
-</form>
+    button {
+      background-color: #2563eb;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: #1d4ed8;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .route {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #93c5fd;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Caribbean Crosswind Virtual</h1>
+    <div class="route">Vuelo CCW101</div>
+    <div class="route">SCEL → SABE</div>
+    <div class="route">Aircraft: A320</div>
+
+    <form action="https://www.simbrief.com/system/dispatch.php" method="POST" target="_blank">
+      <input type="hidden" name="orig" value="SCEL">
+      <input type="hidden" name="dest" value="SABE">
+      <input type="hidden" name="type" value="A320">
+      <input type="hidden" name="airline" value="CCW">
+      <input type="hidden" name="fltnum" value="101">
+      <button type="submit">Generar Plan en SimBrief</button>
+    </form>
+
+  </div>
+
+</body>
+</html>
