@@ -1,36 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>Caribbean Crosswind Virtual</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <div class="container">
+  <div class="center">
     <h1>Caribbean Crosswind Virtual</h1>
-
-    <h2>Registro Piloto</h2>
-
-    <input type="text" id="name" placeholder="Nombre completo">
-    <input type="email" id="email" placeholder="Email">
-    <input type="text" id="simbrief_username" placeholder="SimBrief Username">
-
-    <button onclick="registerPilot()">Registrar Piloto</button>
-
-    <hr>
-
-    <h2>Generar Vuelo</h2>
-
-    <input type="email" id="login_email" placeholder="Email registrado">
-    <button onclick="generateFlight()">Generar Plan en SimBrief</button>
-
+    <p>Bienvenido a la nueva generación de VA</p>
+    <a href="login.html" class="btn">Login</a>
+    <a href="register.html" class="btn">Register</a>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="config.js"></script>
-  <script src="app.js"></script>
-
 </body>
 </html>
