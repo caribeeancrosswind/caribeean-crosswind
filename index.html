@@ -48,6 +48,28 @@
     }
   </style>
 </head>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const supabase = supabase.createClient(
+  "TU_SUPABASE_URL",
+  "TU_SUPABASE_ANON_KEY"
+);
+
+async function registerPilot() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const simbrief_username = document.getElementById("simbrief_username").value;
+  const simbrief_userid = document.getElementById("simbrief_userid").value;
+
+  await supabase.from("pilots").insert([
+    { name, email, simbrief_username, simbrief_userid }
+  ]);
+
+  alert("Piloto registrado correctamente");
+}
+</script>
+
 <body>
 
   <div class="card">
@@ -71,7 +93,28 @@
       <input type="hidden" name="type" value="A320">
       <input type="hidden" name="airline" value="CCW">
       <input type="hidden" name="fltnum" value="101">
-      <button type="submit">Generar Plan en SimBrief</button>
+      <button onclick="generateFlight()">Generar Plan en SimBrief</button>
+<script>
+async function generateFlight() {
+  const email = document.getElementById("email").value;
+
+  const { data } = await supabase
+    .from("pilots")
+    .select("*")
+    .eq("email", email)
+    .single();
+
+  if (!data) {
+    alert("Piloto no encontrado");
+    return;
+  }
+
+  const url = `https://www.simbrief.com/system/dispatch.php?orig=SCEL&dest=SABE&type=A320&airline=CCW&fltnum=101&username=${data.simbrief_username}`;
+
+  window.open(url, "_blank");
+}
+</script>
+
     </form>
 
   </div>
