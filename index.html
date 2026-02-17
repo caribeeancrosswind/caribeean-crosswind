@@ -55,6 +55,15 @@
     <div class="route">Vuelo CCW101</div>
     <div class="route">SCEL → SABE</div>
     <div class="route">Aircraft: A320</div>
+    <h2>Registro Piloto</h2>
+
+<input type="text" id="name" placeholder="Nombre">
+<input type="email" id="email" placeholder="Email">
+<input type="text" id="simbrief_username" placeholder="SimBrief Username">
+<input type="text" id="simbrief_userid" placeholder="SimBrief UserID">
+
+<button onclick="registerPilot()">Registrarse</button>
+
 
     <form action="https://www.simbrief.com/system/dispatch.php" method="POST" target="_blank">
       <input type="hidden" name="orig" value="SCEL">
