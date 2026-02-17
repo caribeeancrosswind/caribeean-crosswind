@@ -1,26 +1,19 @@
+
 async function loadFlights() {
-  const { data } = await supabaseClient.from("flights").select("*");
+const { data, error } = await supabaseClient.from("flights").select("*");
+if (error) return console.error(error);
 
-  const table = document.querySelector("#flightTable tbody");
-  table.innerHTML = "";
-
-  data.forEach(f => {
-    table.innerHTML += `
-      <tr>
-        <td>${f.flight_number}</td>
-        <td>${f.origin}</td>
-        <td>${f.destination}</td>
-        <td>${f.aircraft}</td>
-        <td><button onclick="book('${f.flight_number}','${f.origin}','${f.destination}','${f.aircraft}')">Book</button></td>
-      </tr>`;
-  });
-}
-
-async function book(flight, origin, dest, aircraft) {
-  const { data } = await supabaseClient.from("pilots").select("simbrief_username").limit(1).single();
-
-  const url = `https://www.simbrief.com/system/dispatch.php?orig=${origin}&dest=${dest}&type=${aircraft}&fltnum=${flight}&airline=CCW&username=${data.simbrief_username}`;
-  window.open(url, "_blank");
+const table = document.getElementById("flightsTable");
+data.forEach(flight => {
+table.innerHTML += `
+<tr>
+<td>${flight.flight_number}</td>
+<td>${flight.origin}</td>
+<td>${flight.destination}</td>
+<td>${flight.aircraft}</td>
+</tr>
+`;
+});
 }
 
 loadFlights();

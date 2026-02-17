@@ -1,9 +1,11 @@
-body { font-family: Arial; background:#0f172a; color:white; }
-.center { text-align:center; margin-top:100px; }
-.card { width:400px; margin:50px auto; padding:20px; background:#1e293b; border-radius:10px; }
-input { width:100%; padding:10px; margin:10px 0; }
-button, .btn { padding:10px 20px; background:#2563eb; color:white; border:none; text-decoration:none; display:inline-block; margin:5px; }
-.nav { background:#111827; padding:10px; }
-.nav a { color:white; margin-right:15px; }
-table { width:100%; margin-top:20px; border-collapse:collapse; }
-th, td { padding:10px; border-bottom:1px solid #334155; }
+
+body { background-color: #000; }
+
+.hero {
+height: 100vh;
+background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1504198458649-3128b932f49b?auto=format&fit=crop&w=1950&q=80')
+no-repeat center center/cover;
+}
+
+.card { border-radius: 10px; }
